@@ -7,14 +7,12 @@ function App() {
       {/* Navigation Bar */}
       <nav className="navbar">
 
-        {/* Logo */}
         <div className="logo">
           <span className="logo-icon">🚗</span>
           <span className="logo-text">AutoVerse</span>
           <span className="logo-ai">AI</span>
         </div>
 
-        {/* Navigation Links */}
         <div className="nav-links">
           <a href="#home">Home</a>
           <a href="#cars">Explore Cars</a>
@@ -22,7 +20,6 @@ function App() {
           <a href="#favorites">Favorites</a>
         </div>
 
-        {/* Right Side */}
         <div className="nav-actions">
           <button className="ai-button">
             🤖 AI Assistant
@@ -35,10 +32,15 @@ function App() {
 
       </nav>
 
-      {/* Temporary Home Section */}
+
+      {/* Hero Section */}
       <main className="home-section" id="home">
+
         <div className="hero-content">
-          <p className="hero-small">WELCOME TO AUTOVERSE AI</p>
+
+          <p className="hero-small">
+            WELCOME TO AUTOVERSE AI
+          </p>
 
           <h1>
             Find Your
@@ -50,16 +52,67 @@ function App() {
             and get intelligent AI-powered recommendations.
           </p>
 
+
+          {/* Search Box */}
+          <div className="search-box">
+
+            <div className="search-field">
+              <label>Brand</label>
+              <select>
+                <option>Select Brand</option>
+                <option>BMW</option>
+                <option>Mercedes-Benz</option>
+                <option>Audi</option>
+                <option>Tesla</option>
+                <option>Toyota</option>
+                <option>Ford</option>
+              </select>
+            </div>
+
+
+            <div className="search-field">
+              <label>Model</label>
+              <input
+                type="text"
+                placeholder="Enter model"
+              />
+            </div>
+
+
+            <div className="search-field">
+              <label>Budget</label>
+              <select>
+                <option>Select Budget</option>
+                <option>Under ₹10 Lakh</option>
+                <option>₹10 - ₹20 Lakh</option>
+                <option>₹20 - ₹50 Lakh</option>
+                <option>Above ₹50 Lakh</option>
+              </select>
+            </div>
+
+
+            <button className="search-button">
+              🔍 Search Cars
+            </button>
+
+          </div>
+
+
+          {/* Quick Actions */}
           <div className="hero-buttons">
+
             <button className="explore-button">
               Explore Cars →
             </button>
 
             <button className="learn-button">
-              Learn More
+              🤖 Ask AI
             </button>
+
           </div>
+
         </div>
+
       </main>
 
     </div>

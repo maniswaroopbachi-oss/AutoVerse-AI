@@ -232,3 +232,132 @@
     width: 200px;
   }
 }
+/* =========================
+   CAR SEARCH BOX
+========================= */
+
+.search-box {
+  width: 100%;
+  max-width: 1000px;
+  padding: 20px;
+  margin-bottom: 30px;
+
+  display: flex;
+  align-items: flex-end;
+  gap: 15px;
+
+  background: rgba(20, 29, 47, 0.9);
+  border: 1px solid #2d3952;
+  border-radius: 14px;
+
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.25);
+}
+
+.search-field {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  flex: 1;
+}
+
+.search-field label {
+  color: #aab2c5;
+  font-size: 13px;
+  font-weight: bold;
+}
+
+.search-field input,
+.search-field select {
+  width: 100%;
+  height: 45px;
+
+  padding: 0 12px;
+
+  background: #0d1424;
+  color: white;
+
+  border: 1px solid #35415a;
+  border-radius: 7px;
+
+  outline: none;
+}
+
+.search-field input:focus,
+.search-field select:focus {
+  border-color: #4f9cff;
+}
+
+.search-field select {
+  cursor: pointer;
+}
+
+.search-button {
+  height: 45px;
+  padding: 0 20px;
+
+  border: none;
+  border-radius: 7px;
+
+  background: #4f9cff;
+  color: white;
+
+  font-size: 14px;
+  font-weight: bold;
+
+  cursor: pointer;
+  white-space: nowrap;
+
+  transition: 0.3s;
+}
+
+.search-button:hover {
+  background: #297de0;
+  transform: translateY(-2px);
+}
+@media (max-width: 900px) {
+
+  .nav-links {
+    display: none;
+  }
+
+  .hero-content h1 {
+    font-size: 50px;
+  }
+
+  .navbar {
+    padding: 0 4%;
+  }
+
+  .search-box {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .search-button {
+    width: 100%;
+  }
+}
+
+@media (max-width: 600px) {
+
+  .ai-button {
+    display: none;
+  }
+
+  .hero-content h1 {
+    font-size: 42px;
+  }
+
+  .hero-description {
+    font-size: 16px;
+  }
+
+  .hero-buttons {
+    flex-direction: column;
+    width: 200px;
+  }
+
+  .search-box {
+    padding: 15px;
+  }
+}
