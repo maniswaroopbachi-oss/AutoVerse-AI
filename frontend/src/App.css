@@ -1,184 +1,234 @@
-.counter {
-  font-size: 16px;
-  padding: 5px 10px;
-  border-radius: 5px;
-  color: var(--accent);
-  background: var(--accent-bg);
-  border: 2px solid transparent;
-  transition: border-color 0.3s;
-  margin-bottom: 24px;
-
-  &:hover {
-    border-color: var(--accent-border);
-  }
-  &:focus-visible {
-    outline: 2px solid var(--accent);
-    outline-offset: 2px;
-  }
-}
-
-.hero {
-  position: relative;
-
-  .base,
-  .framework,
-  .vite {
-    inset-inline: 0;
-    margin: 0 auto;
-  }
-
-  .base {
-    width: 170px;
-    position: relative;
-    z-index: 0;
-  }
-
-  .framework,
-  .vite {
-    position: absolute;
-  }
-
-  .framework {
-    z-index: 1;
-    top: 34px;
-    height: 28px;
-    transform: perspective(2000px) rotateZ(300deg) rotateX(44deg) rotateY(39deg)
-      scale(1.4);
-  }
-
-  .vite {
-    z-index: 0;
-    top: 107px;
-    height: 26px;
-    width: auto;
-    transform: perspective(2000px) rotateZ(300deg) rotateX(40deg) rotateY(39deg)
-      scale(0.8);
-  }
-}
-
-#center {
-  display: flex;
-  flex-direction: column;
-  gap: 25px;
-  place-content: center;
-  place-items: center;
-  flex-grow: 1;
-
-  @media (max-width: 1024px) {
-    padding: 32px 20px 24px;
-    gap: 18px;
-  }
-}
-
-#next-steps {
-  display: flex;
-  border-top: 1px solid var(--border);
-  text-align: left;
-
-  & > div {
-    flex: 1 1 0;
-    padding: 32px;
-    @media (max-width: 1024px) {
-      padding: 24px 20px;
-    }
-  }
-
-  .icon {
-    margin-bottom: 16px;
-    width: 22px;
-    height: 22px;
-  }
-
-  @media (max-width: 1024px) {
-    flex-direction: column;
-    text-align: center;
-  }
-}
-
-#docs {
-  border-right: 1px solid var(--border);
-
-  @media (max-width: 1024px) {
-    border-right: none;
-    border-bottom: 1px solid var(--border);
-  }
-}
-
-#next-steps ul {
-  list-style: none;
+/* Reset */
+* {
+  margin: 0;
   padding: 0;
-  display: flex;
-  gap: 8px;
-  margin: 32px 0 0;
-
-  .logo {
-    height: 18px;
-  }
-
-  a {
-    color: var(--text-h);
-    font-size: 16px;
-    border-radius: 6px;
-    background: var(--social-bg);
-    display: flex;
-    padding: 6px 12px;
-    align-items: center;
-    gap: 8px;
-    text-decoration: none;
-    transition: box-shadow 0.3s;
-
-    &:hover {
-      box-shadow: var(--shadow);
-    }
-    .button-icon {
-      height: 18px;
-      width: 18px;
-    }
-  }
-
-  @media (max-width: 1024px) {
-    margin-top: 20px;
-    flex-wrap: wrap;
-    justify-content: center;
-
-    li {
-      flex: 1 1 calc(50% - 8px);
-    }
-
-    a {
-      width: 100%;
-      justify-content: center;
-      box-sizing: border-box;
-    }
-  }
+  box-sizing: border-box;
 }
 
-#spacer {
-  height: 88px;
-  border-top: 1px solid var(--border);
-  @media (max-width: 1024px) {
-    height: 48px;
-  }
+/* Main App */
+.app {
+  min-height: 100vh;
+  background: #0a0f1c;
+  color: white;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
-.ticks {
-  position: relative;
+/* =========================
+   NAVIGATION BAR
+========================= */
+
+.navbar {
+  height: 75px;
   width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 6%;
+  background: rgba(10, 15, 28, 0.95);
+  border-bottom: 1px solid #20283a;
+  position: fixed;
+  top: 0;
+  z-index: 1000;
+}
 
-  &::before,
-  &::after {
-    content: '';
-    position: absolute;
-    top: -4.5px;
-    border: 5px solid transparent;
+/* Logo */
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  font-size: 23px;
+  font-weight: bold;
+}
+
+.logo-icon {
+  font-size: 27px;
+}
+
+.logo-text {
+  color: white;
+}
+
+.logo-ai {
+  color: #4f9cff;
+  font-size: 16px;
+  margin-top: -10px;
+}
+
+/* Navigation Links */
+
+.nav-links {
+  display: flex;
+  gap: 35px;
+}
+
+.nav-links a {
+  color: #c7ccda;
+  text-decoration: none;
+  font-size: 15px;
+  transition: 0.3s;
+}
+
+.nav-links a:hover {
+  color: #4f9cff;
+}
+
+/* Navigation Buttons */
+
+.nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.ai-button {
+  background: #1a2438;
+  border: 1px solid #34415c;
+  color: white;
+  padding: 10px 17px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.ai-button:hover {
+  background: #263551;
+}
+
+.login-button {
+  background: #4f9cff;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.login-button:hover {
+  background: #297de0;
+}
+
+/* =========================
+   HERO SECTION
+========================= */
+
+.home-section {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  padding: 100px 10% 50px;
+  background:
+    radial-gradient(
+      circle at 80% 40%,
+      rgba(48, 117, 220, 0.18),
+      transparent 35%
+    ),
+    #0a0f1c;
+}
+
+.hero-content {
+  max-width: 700px;
+}
+
+.hero-small {
+  color: #4f9cff;
+  font-size: 14px;
+  font-weight: bold;
+  letter-spacing: 3px;
+  margin-bottom: 20px;
+}
+
+.hero-content h1 {
+  font-size: 70px;
+  line-height: 1.05;
+  margin-bottom: 25px;
+}
+
+.hero-content h1 span {
+  color: #4f9cff;
+}
+
+.hero-description {
+  color: #aab2c5;
+  font-size: 18px;
+  line-height: 1.7;
+  max-width: 600px;
+  margin-bottom: 35px;
+}
+
+/* Hero Buttons */
+
+.hero-buttons {
+  display: flex;
+  gap: 15px;
+}
+
+.explore-button {
+  background: #4f9cff;
+  color: white;
+  border: none;
+  padding: 14px 25px;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.explore-button:hover {
+  background: #297de0;
+}
+
+.learn-button {
+  background: transparent;
+  color: white;
+  border: 1px solid #47536b;
+  padding: 14px 25px;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.learn-button:hover {
+  background: #172033;
+}
+
+/* =========================
+   RESPONSIVE DESIGN
+========================= */
+
+@media (max-width: 900px) {
+
+  .nav-links {
+    display: none;
   }
 
-  &::before {
-    left: 0;
-    border-left-color: var(--border);
+  .hero-content h1 {
+    font-size: 50px;
   }
-  &::after {
-    right: 0;
-    border-right-color: var(--border);
+
+  .navbar {
+    padding: 0 4%;
+  }
+}
+
+@media (max-width: 600px) {
+
+  .ai-button {
+    display: none;
+  }
+
+  .hero-content h1 {
+    font-size: 42px;
+  }
+
+  .hero-description {
+    font-size: 16px;
+  }
+
+  .hero-buttons {
+    flex-direction: column;
+    width: 200px;
   }
 }
