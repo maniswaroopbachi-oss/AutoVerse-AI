@@ -1,5 +1,6 @@
 import { useState } from "react";
 import "./ExploreCars.css";
+import { Link } from "react-router-dom";
 
 function ExploreCars() {
   const [search, setSearch] = useState("");
@@ -126,9 +127,12 @@ function ExploreCars() {
               <div className="explore-bottom">
                 <strong>{car.price}</strong>
 
-                <button>
-                  View Details →
-                </button>
+               <Link
+                  to="/car/bmw-m4"
+                  className="view-details"
+             >  
+               View Details →
+                </Link>
               </div>
 
             </div>

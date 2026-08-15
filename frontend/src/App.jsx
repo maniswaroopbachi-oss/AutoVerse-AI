@@ -1,3 +1,4 @@
+import CarDetails from "./pages/CarDetails";
 import "./App.css";
 import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
 import ExploreCars from "./pages/ExploreCars";
@@ -256,6 +257,10 @@ function App() {
     <BrowserRouter>
 
       <Routes>
+        <Route
+  path="/car/bmw-m4"
+  element={<CarDetails />}
+/>
 
         <Route
           path="/"

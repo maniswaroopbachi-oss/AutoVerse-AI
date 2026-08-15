@@ -177,3 +177,8 @@
     font-size: 34px;
   }
 }
+.view-details {
+  color: #4f9cff;
+  text-decoration: none;
+  font-weight: bold;
+}
