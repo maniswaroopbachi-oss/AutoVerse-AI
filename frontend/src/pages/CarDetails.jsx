@@ -1,7 +1,11 @@
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
+import cars from "../data/cars";
 import "./CarDetails.css";
 
 function CarDetails() {
+    const { id } = useParams();
+
+const car = cars.find((item) => item.id === id);
   return (
     <div className="details-page">
 
@@ -47,8 +51,8 @@ function CarDetails() {
 
           <div className="details-image">
             <img
-              src="https://images.unsplash.com/photo-1555215695-3004980ad54e?auto=format&fit=crop&w=1200&q=80"
-              alt="BMW M4"
+               src={car.image}
+               alt={car.fullName}
             />
           </div>
 
@@ -56,22 +60,20 @@ function CarDetails() {
           <div className="details-content">
 
             <p className="details-brand">
-              BMW
+                      {car.brand}
             </p>
 
             <h1>
-              BMW M4
+              {car.fullName}
             </h1>
 
             <p className="details-description">
-              The BMW M4 combines high-performance engineering,
-              premium design and advanced technology to deliver
-              an exciting driving experience.
+              {car.description}
             </p>
 
 
             <div className="details-price">
-              ₹1.48 Cr
+              {car.price}
             </div>
 
 
@@ -106,42 +108,42 @@ function CarDetails() {
 
             <div className="spec-card">
               <span>Engine</span>
-              <strong>3.0L Twin Turbo</strong>
+              <strong>{car.engine}</strong>
             </div>
 
             <div className="spec-card">
               <span>Power</span>
-              <strong>503 HP</strong>
+              <strong>{car.power}</strong>
             </div>
 
             <div className="spec-card">
               <span>Torque</span>
-              <strong>650 Nm</strong>
+              <strong>{car.torque}</strong>
             </div>
 
             <div className="spec-card">
               <span>Transmission</span>
-              <strong>Automatic</strong>
+              <strong>{car.transmission}</strong>
             </div>
 
             <div className="spec-card">
               <span>Fuel Type</span>
-              <strong>Petrol</strong>
+              <strong>{car.fuel}</strong>
             </div>
 
             <div className="spec-card">
               <span>Drive Type</span>
-              <strong>RWD</strong>
+              <strong>{car.driveType}</strong>
             </div>
 
             <div className="spec-card">
               <span>0–100 km/h</span>
-              <strong>3.9 sec</strong>
+              <strong>{car.acceleration}</strong>
             </div>
 
             <div className="spec-card">
               <span>Top Speed</span>
-              <strong>250 km/h</strong>
+              <strong>{car.topSpeed}</strong>
             </div>
 
           </div>

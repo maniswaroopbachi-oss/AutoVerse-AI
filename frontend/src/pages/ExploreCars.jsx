@@ -1,50 +1,14 @@
 import { useState } from "react";
 import "./ExploreCars.css";
 import { Link } from "react-router-dom";
+import cars from "../data/cars";
 
 function ExploreCars() {
   const [search, setSearch] = useState("");
   const [brand, setBrand] = useState("All Brands");
   const [fuel, setFuel] = useState("All Fuel Types");
 
-  const cars = [
-    {
-      brand: "BMW",
-      model: "BMW M4",
-      fuel: "Petrol",
-      transmission: "Automatic",
-      price: "₹1.48 Cr",
-      image:
-        "https://images.unsplash.com/photo-1555215695-3004980ad54e?auto=format&fit=crop&w=900&q=80",
-    },
-    {
-      brand: "Mercedes-Benz",
-      model: "AMG GT",
-      fuel: "Petrol",
-      transmission: "Automatic",
-      price: "₹2.71 Cr",
-      image:
-        "https://images.unsplash.com/photo-1618843479313-40f8afb4b4d8?auto=format&fit=crop&w=900&q=80",
-    },
-    {
-      brand: "Audi",
-      model: "Audi RS5",
-      fuel: "Petrol",
-      transmission: "Automatic",
-      price: "₹1.13 Cr",
-      image:
-        "https://images.unsplash.com/photo-1606664515524-ed2f786a0bd6?auto=format&fit=crop&w=900&q=80",
-    },
-    {
-      brand: "Tesla",
-      model: "Model S",
-      fuel: "Electric",
-      transmission: "Automatic",
-      price: "₹1.50 Cr",
-      image:
-        "https://images.unsplash.com/photo-1560958089-b8a1929cea89?auto=format&fit=crop&w=900&q=80",
-    },
-  ];
+  
 
   const filteredCars = cars.filter((car) => {
     const matchesSearch =
@@ -128,11 +92,11 @@ function ExploreCars() {
                 <strong>{car.price}</strong>
 
                <Link
-                  to="/car/bmw-m4"
+                  to={`/car/${car.id}`}
                   className="view-details"
-             >  
-               View Details →
-                </Link>
+              >
+                View Details →
+               </Link>
               </div>
 
             </div>

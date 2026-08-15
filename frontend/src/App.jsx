@@ -258,8 +258,10 @@ function App() {
 
       <Routes>
         <Route
-  path="/car/bmw-m4"
-  element={<CarDetails />}
+  
+          path="/car/:id"
+          element={<CarDetails />}
+
 />
 
         <Route
