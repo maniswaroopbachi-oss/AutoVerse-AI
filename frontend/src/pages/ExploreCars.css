@@ -1,0 +1,179 @@
+.explore-page {
+  min-height: 100vh;
+  padding: 120px 8% 80px;
+  background: #0a0f1c;
+  color: white;
+}
+
+.explore-header {
+  text-align: center;
+  margin-bottom: 45px;
+}
+
+.explore-header p {
+  color: #4f9cff;
+  font-size: 13px;
+  font-weight: bold;
+  letter-spacing: 3px;
+  margin-bottom: 10px;
+}
+
+.explore-header h1 {
+  font-size: 45px;
+  margin-bottom: 12px;
+}
+
+.explore-header span {
+  color: #929db2;
+}
+
+/* Filters */
+
+.filters {
+  max-width: 1100px;
+  margin: 0 auto 45px;
+
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  gap: 15px;
+
+  padding: 20px;
+
+  background: #151e30;
+  border: 1px solid #28344b;
+  border-radius: 14px;
+}
+
+.filters input,
+.filters select {
+  height: 48px;
+  padding: 0 14px;
+
+  background: #0d1424;
+  color: white;
+
+  border: 1px solid #35415a;
+  border-radius: 8px;
+
+  outline: none;
+}
+
+.filters input:focus,
+.filters select:focus {
+  border-color: #4f9cff;
+}
+
+/* Cars */
+
+.explore-grid {
+  max-width: 1200px;
+  margin: auto;
+
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 25px;
+}
+
+.explore-card {
+  overflow: hidden;
+
+  background: #151e30;
+  border: 1px solid #28344b;
+  border-radius: 15px;
+
+  transition: 0.3s;
+}
+
+.explore-card:hover {
+  transform: translateY(-7px);
+  border-color: #4f9cff;
+}
+
+.explore-image {
+  height: 220px;
+  overflow: hidden;
+}
+
+.explore-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: 0.4s;
+}
+
+.explore-card:hover .explore-image img {
+  transform: scale(1.05);
+}
+
+.explore-info {
+  padding: 22px;
+}
+
+.explore-info > p {
+  color: #4f9cff;
+  font-size: 13px;
+  font-weight: bold;
+}
+
+.explore-info h2 {
+  margin: 7px 0 18px;
+}
+
+.explore-specs {
+  display: flex;
+  gap: 15px;
+
+  color: #9ca7bb;
+  font-size: 13px;
+
+  padding-bottom: 18px;
+  border-bottom: 1px solid #28344b;
+}
+
+.explore-bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding-top: 18px;
+}
+
+.explore-bottom button {
+  border: none;
+  background: transparent;
+  color: #4f9cff;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.no-results {
+  text-align: center;
+  margin-top: 80px;
+  color: #9ca7bb;
+}
+
+/* Responsive */
+
+@media (max-width: 1000px) {
+  .explore-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .filters {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 650px) {
+  .explore-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .explore-page {
+    padding: 110px 5% 60px;
+  }
+
+  .explore-header h1 {
+    font-size: 34px;
+  }
+}

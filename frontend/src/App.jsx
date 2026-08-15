@@ -1,9 +1,10 @@
-import './App.css'
+import "./App.css";
+import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
+import ExploreCars from "./pages/ExploreCars";
 
-function App() {
+function Home() {
   return (
-    <div className="app">
-
+    <>
       {/* Navigation Bar */}
       <nav className="navbar">
 
@@ -14,10 +15,10 @@ function App() {
         </div>
 
         <div className="nav-links">
-          <a href="#home">Home</a>
-          <a href="#cars">Explore Cars</a>
-          <a href="#compare">Compare</a>
-          <a href="#favorites">Favorites</a>
+          <Link to="/">Home</Link>
+          <Link to="/explore">Explore Cars</Link>
+          <Link to="/compare">Compare</Link>
+          <Link to="/favorites">Favorites</Link>
         </div>
 
         <div className="nav-actions">
@@ -32,9 +33,8 @@ function App() {
 
       </nav>
 
-
-      {/* Hero Section */}
-      <main className="home-section" id="home">
+      {/* Hero */}
+      <main className="home-section">
 
         <div className="hero-content">
 
@@ -51,103 +51,13 @@ function App() {
             Explore cars, compare models, discover specifications,
             and get intelligent AI-powered recommendations.
           </p>
-          {/* Featured Cars Section */}
-<section className="featured-section" id="cars">
-
-  <div className="section-heading">
-    <p>EXPLORE</p>
-    <h2>Featured Cars</h2>
-    <span>
-      Discover some of the most popular cars and explore their details.
-    </span>
-  </div>
-
-  <div className="car-grid">
-
-    <div className="car-card">
-      <div className="car-image">
-        <img
-          src="https://images.unsplash.com/photo-1555215695-3004980ad54e?auto=format&fit=crop&w=900&q=80"
-          alt="BMW car"
-        />
-      </div>
-
-      <div className="car-info">
-        <p className="car-brand">BMW</p>
-        <h3>BMW M4</h3>
-
-        <div className="car-specs">
-          <span>⚡ Petrol</span>
-          <span>⚙️ Automatic</span>
-        </div>
-
-        <div className="car-bottom">
-          <strong>₹1.48 Cr</strong>
-          <button>View Details →</button>
-        </div>
-      </div>
-    </div>
-
-
-    <div className="car-card">
-      <div className="car-image">
-        <img
-          src="https://images.unsplash.com/photo-1618843479313-40f8afb4b4d8?auto=format&fit=crop&w=900&q=80"
-          alt="Mercedes car"
-        />
-      </div>
-
-      <div className="car-info">
-        <p className="car-brand">Mercedes-Benz</p>
-        <h3>Mercedes AMG GT</h3>
-
-        <div className="car-specs">
-          <span>⚡ Petrol</span>
-          <span>⚙️ Automatic</span>
-        </div>
-
-        <div className="car-bottom">
-          <strong>₹2.71 Cr</strong>
-          <button>View Details →</button>
-        </div>
-      </div>
-    </div>
-
-
-    <div className="car-card">
-      <div className="car-image">
-        <img
-          src="https://images.unsplash.com/photo-1606664515524-ed2f786a0bd6?auto=format&fit=crop&w=900&q=80"
-          alt="Audi car"
-        />
-      </div>
-
-      <div className="car-info">
-        <p className="car-brand">Audi</p>
-        <h3>Audi RS5</h3>
-
-        <div className="car-specs">
-          <span>⚡ Petrol</span>
-          <span>⚙️ Automatic</span>
-        </div>
-
-        <div className="car-bottom">
-          <strong>₹1.13 Cr</strong>
-          <button>View Details →</button>
-        </div>
-      </div>
-    </div>
-
-  </div>
-
-</section>
-
 
           {/* Search Box */}
           <div className="search-box">
 
             <div className="search-field">
               <label>Brand</label>
+
               <select>
                 <option>Select Brand</option>
                 <option>BMW</option>
@@ -155,22 +65,21 @@ function App() {
                 <option>Audi</option>
                 <option>Tesla</option>
                 <option>Toyota</option>
-                <option>Ford</option>
               </select>
             </div>
 
-
             <div className="search-field">
               <label>Model</label>
+
               <input
                 type="text"
                 placeholder="Enter model"
               />
             </div>
 
-
             <div className="search-field">
               <label>Budget</label>
+
               <select>
                 <option>Select Budget</option>
                 <option>Under ₹10 Lakh</option>
@@ -180,20 +89,23 @@ function App() {
               </select>
             </div>
 
-
-            <button className="search-button">
+            <Link
+              to="/explore"
+              className="search-button"
+            >
               🔍 Search Cars
-            </button>
+            </Link>
 
           </div>
 
-
-          {/* Quick Actions */}
           <div className="hero-buttons">
 
-            <button className="explore-button">
+            <Link
+              to="/explore"
+              className="explore-button"
+            >
               Explore Cars →
-            </button>
+            </Link>
 
             <button className="learn-button">
               🤖 Ask AI
@@ -205,8 +117,191 @@ function App() {
 
       </main>
 
-    </div>
-  )
+      {/* Featured Cars */}
+      <section className="featured-section">
+
+        <div className="section-heading">
+
+          <p>EXPLORE</p>
+
+          <h2>Featured Cars</h2>
+
+          <span>
+            Discover some of the most popular cars and explore their details.
+          </span>
+
+        </div>
+
+        <div className="car-grid">
+
+          <div className="car-card">
+
+            <div className="car-image">
+              <img
+                src="https://images.unsplash.com/photo-1555215695-3004980ad54e?auto=format&fit=crop&w=900&q=80"
+                alt="BMW"
+              />
+            </div>
+
+            <div className="car-info">
+
+              <p className="car-brand">BMW</p>
+
+              <h3>BMW M4</h3>
+
+              <div className="car-specs">
+                <span>⚡ Petrol</span>
+                <span>⚙️ Automatic</span>
+              </div>
+
+              <div className="car-bottom">
+
+                <strong>₹1.48 Cr</strong>
+
+                <Link to="/explore">
+                  View Details →
+                </Link>
+
+              </div>
+
+            </div>
+
+          </div>
+
+
+          <div className="car-card">
+
+            <div className="car-image">
+              <img
+                src="https://images.unsplash.com/photo-1618843479313-40f8afb4b4d8?auto=format&fit=crop&w=900&q=80"
+                alt="Mercedes"
+              />
+            </div>
+
+            <div className="car-info">
+
+              <p className="car-brand">
+                Mercedes-Benz
+              </p>
+
+              <h3>AMG GT</h3>
+
+              <div className="car-specs">
+                <span>⚡ Petrol</span>
+                <span>⚙️ Automatic</span>
+              </div>
+
+              <div className="car-bottom">
+
+                <strong>₹2.71 Cr</strong>
+
+                <Link to="/explore">
+                  View Details →
+                </Link>
+
+              </div>
+
+            </div>
+
+          </div>
+
+
+          <div className="car-card">
+
+            <div className="car-image">
+              <img
+                src="https://images.unsplash.com/photo-1606664515524-ed2f786a0bd6?auto=format&fit=crop&w=900&q=80"
+                alt="Audi"
+              />
+            </div>
+
+            <div className="car-info">
+
+              <p className="car-brand">
+                Audi
+              </p>
+
+              <h3>Audi RS5</h3>
+
+              <div className="car-specs">
+                <span>⚡ Petrol</span>
+                <span>⚙️ Automatic</span>
+              </div>
+
+              <div className="car-bottom">
+
+                <strong>₹1.13 Cr</strong>
+
+                <Link to="/explore">
+                  View Details →
+                </Link>
+
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </section>
+    </>
+  );
 }
 
-export default App
+
+function App() {
+
+  return (
+    <BrowserRouter>
+
+      <Routes>
+
+        <Route
+          path="/"
+          element={<Home />}
+        />
+
+        <Route
+          path="/explore"
+          element={
+            <>
+              <nav className="navbar">
+
+                <div className="logo">
+                  <span className="logo-icon">🚗</span>
+                  <span className="logo-text">AutoVerse</span>
+                  <span className="logo-ai">AI</span>
+                </div>
+
+                <div className="nav-links">
+                  <Link to="/">Home</Link>
+                  <Link to="/explore">Explore Cars</Link>
+                  <Link to="/compare">Compare</Link>
+                  <Link to="/favorites">Favorites</Link>
+                </div>
+
+                <div className="nav-actions">
+                  <button className="ai-button">
+                    🤖 AI Assistant
+                  </button>
+
+                  <button className="login-button">
+                    Login
+                  </button>
+                </div>
+
+              </nav>
+
+              <ExploreCars />
+            </>
+          }
+        />
+
+      </Routes>
+
+    </BrowserRouter>
+  );
+}
+
+export default App;
